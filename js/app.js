@@ -6,7 +6,8 @@ var expenseApp = angular.module('expenseApp', [
   'ngRoute',
   'ngResource',
   'expenseControllers',
-  'expenseServices'
+  'expenseServices',
+  'angularUtils.directives.dirPagination',
 ],function($interpolateProvider){
   //$interpolateProvider.startSymbol('[[');
   //$interpolateProvider.endSymbol(']]');
@@ -28,6 +29,10 @@ expenseApp.config(['$routeProvider',
         templateUrl:'partials/Admin/adminLogin.html',
         controller:'adminLoginCtrl'
       }).
+      when('/login/admin/expense',{
+        templateUrl:'partials/admin/adminExpenseType.html',
+        controller:'adminExpenseTypeCtrl'
+      }).
 
       when('/login/manager',{
         templateUrl:'partials/Manager/managerLogin.html',
@@ -37,6 +42,10 @@ expenseApp.config(['$routeProvider',
       when('/login/employee',{
         templateUrl:'partials/Employee/employeeLogin.html',
         controller:'employeeLoginCtrl'
+      }).
+      when('login/employee/dashboard',{
+        templateUrl:'partials/Employee/employeeDashboard.html',
+        controller:'employeeDashboardCtrl'
       }).
       otherwise({
         redirectTo: '/login'

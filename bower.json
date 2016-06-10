@@ -13,6 +13,7 @@
     "angular-route": "1.4.x",
     "angular-resource": "1.4.x",
     "angular-animate": "1.4.x",
-    "angularUtils-pagination": "angular-utils-pagination#^0.11.1"
+    "angularUtils-pagination": "angular-utils-pagination#^0.11.1",
+    "Materialize": "materialize#^0.97.6"
   }
 }

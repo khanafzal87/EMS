@@ -2,10 +2,35 @@
 <html lang="en" ng-app="expenseApp">
 <head>
 
-  <meta charset="utf-8">
+     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      
   <title>Expense Management</title>
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">-->
+    <!-- include material design CSS -->
+    <link rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.min.css" />
+     
+    <!-- include material design icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+   <!-- <link rel="stylesheet" type="text/css" href="css/style.css">-->
+     <!-- custom CSS -->
+    <style>
+    .width-30-pct{
+        width:30%;
+    }
+     
+    .text-align-center{
+        text-align:center;
+    }
+     
+    .margin-bottom-1em{
+        margin-bottom:1em;
+    }
+    </style>
   <script src="bower_components/jquery/dist/jquery.js"></script>
+  <!-- material design js -->
+<script src="bower_components/Materialize/dist/js/materialize.min.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -15,17 +40,24 @@
   <script src="js/services.js"></script>
 </head>
 <body>
+     <!--<div class="container">
+            <div ng-controller="SidebarController" class="sidebar" sidebar-directive="state">
+                <a href="#" id="navigation-toggle" ng-click="toggleState()">Navigation</a>
+                <ul class="navigation">
+                    <li class="navigation-items"> <a href="/">Link1</a> </li>
+                    <li class="navigation-items"> <a href="/">Link2</a> </li>
+                    <li class="navigation-items"> <a href="/">Link3</a> </li>
+                    <li class="navigation-items"> <a href="/">Link4</a> </li>
+                    <li class="navigation-items"> <a href="/">Link4</a> </li>
+                </ul>
+            </div>
+        </div>-->
 
-   <div class="jumbotron">
-        <div class="container">
-            <div class="col-sm-8 col-sm-offset-2">
                 <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
                 <div ng-view></div>
-            </div>
-        </div>
-    </div>
+
     <div class="credits text-center">
-        <p>
+        <p align="center">
             Welcome to Mobiuso Expense Management System
         </p>
     
