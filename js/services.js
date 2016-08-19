@@ -66,3 +66,18 @@ expenseServices.factory('ExpenseType',function ($resource) {
         }
 	});
 });
+expenseServices.factory('Expense',function ($resource) {
+    // body...
+    return $resource('http://localhost:8082/expense/:id',{},{
+        query:{
+            method:'GET',
+            isArray:true
+        },
+        update:{
+            method:'PUT'
+        },
+        delete:{
+            method:'DELETE'
+        }
+    })
+})

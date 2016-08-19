@@ -249,14 +249,23 @@ expenseControllers.controller('adminExpenseTypeCtrl', function($scope, $routePar
         $scope.id = "";
     }
 });
+
+expenseControllers.controller('employeeDashboardCtrl',function ($scope,Expense) {
+    // body...
+    $scope.exp=new Expense();
+    $scope.getAll=function (argument) {
+        // body...
+        $scope.Expense=Expense.query();
+    }
+});
+
+
 expenseControllers.controller("managerLoginCtrl", function($scope, $routeParams) {
     $scope.username = $routeParams.username;
 });
 expenseControllers.controller("employeeLoginCtrl", function($scope, $routeParams) {
     $scope.username = $routeParams.username;
 });
-
-
 expenseControllers.controller('SidebarController', function($scope) {
 
     $scope.state = false;

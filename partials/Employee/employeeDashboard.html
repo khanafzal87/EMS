@@ -1,5 +1,5 @@
 <div>
-<h4>Admin Login</h4>
+<h4>Employee Login</h4>
     <p>Welcome {{username}}</p>
     <a href="/EMS">Log out</a>
 
@@ -11,17 +11,27 @@
          <!-- modal for for creating new product -->
 					<div id="modal-product-form" class="modal">
 					    <div class="modal-content">
-					        <h4 id="modal-product-title">Create New Expense Type</h4>
+					        <h4 id="modal-product-title">Add New Expense</h4>
 					        <div class="row">
 					            <div class="input-field col s12">
-					                <input ng-model="expenseName" type="text" class="validate" id="form-name" placeholder="Type expense name here..." />
-<input ng-model="id" type="text" class="validate 
-" id="form-name" placeholder="Type expense name here..." />
-					                <label for="name">Name</label>
+					                <input ng-model="expenseAmount" type="text" class="validate" id="form-name" placeholder="Type expense name here..." />
+					                <label for="name">Amount</label>
 					            </div>
 				
-					  
-					 
+					  		  <div class="input-field col s12">
+					                <input ng-model="expenseType" type="text" class="validate" id="form-name" placeholder="Type expense name here..." />
+					                <label for="name">Expense Type</label>
+					            </div>
+
+
+					  		  <div class="input-field col s12">
+					                <input ng-model="employeeID" type="text" class="validate" id="form-name" placeholder="Type expense name here..." />
+					                <label for="name">Employee ID</label>
+					            </div>
+					 			<div  class="input-field col s12">
+								    <input type="file" file-model="myFile"/>
+								    <button ng-click="uploadFile()">upload me</button>
+								</div>
 					            <div class="input-field col s12">
 					                <a id="btn-create-product" class="waves-effect waves-light btn margin-bottom-1em" ng-click="createExpenseType()"><i class="material-icons left">add</i>Create</a>
 					 
@@ -33,19 +43,19 @@
 					    </div>
 					</div>
 			<!-- used for searching the current list -->
-			<input type="text" ng-model="search" class="form-control" placeholder="Search expense type..." />				  
+			<input type="text" ng-model="search" class="form-control" placeholder="Search expense..." />				  
 				    <table  ng-init="getAll()" class="hoverable bordered">
 				        <tr>
 				          <th></th>
 				            <th>
 				              <a href="" ng-click=""></a>
-				               Name </th>
+				               Amount </th>
 				       			<th class="text-align-center">Action</th>
 				    
 				        </tr>
-				        <tr dir-paginate="expenseType in ExpenseType| filter:search|itemsPerPage:20">
-				            <td>{{$expenseType.id}}</td>
-				            <td>{{expenseType.expenseName}} </td>
+				        <tr dir-paginate="expense in Expense| filter:search|itemsPerPage:20">
+				            <td>{{expense.ExpenseID}}</td>
+				            <td>{{expense.ExpenseAmount}} </td>
 				             <td>
 			                <a ng-click="readOne(expenseType.id)" class="waves-effect waves-light btn margin-bottom-1em"><i class="material-icons left">edit</i>Edit</a>
 			                <a ng-click="deleteExpenseType(expenseType.id)" class="waves-effect waves-light btn margin-bottom-1em"><i class="material-icons left">delete</i>Delete</a>

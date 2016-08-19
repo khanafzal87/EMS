@@ -43,7 +43,7 @@ expenseApp.config(['$routeProvider',
         templateUrl:'partials/Employee/employeeLogin.html',
         controller:'employeeLoginCtrl'
       }).
-      when('login/employee/dashboard',{
+      when('/login/employee/dashboard',{
         templateUrl:'partials/Employee/employeeDashboard.html',
         controller:'employeeDashboardCtrl'
       }).
